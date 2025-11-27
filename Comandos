@@ -1,0 +1,18 @@
+# Comandos necesarios 
+Es necesario tener descargado git, para poder instalar  RL-Baselines3 Zoo , si ya se tiene git toca instalar baselines3-zoo con el siguiente comando:
+pip install git+https://github.com/DLR-RM/rl-baselines3-zoo
+
+#Librerías necesarias
+pip install gymnasium[atari]
+pip install gymnasium[accept-rom-license]
+
+# Comando para entrenar 
+python -m rl_zoo3.train --algo dqn  --env Se sustituye por el nombre del juego -f logs/ -c dqn.yml   ALE/KungFuMaster-v5
+
+ejemplo:
+
+python -m rl_zoo3.train --algo dqn  --env ALE/KungFuMaster-v5 -f logs/ -c dqn.yml   
+
+#Comando para probar el agente
+
+ python -m rl_zoo3.enjoy  --algo dqn  --env ALE/KungFuMaster-v5  --n-timesteps 5000  --folder logs/
